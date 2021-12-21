@@ -39,7 +39,6 @@ const RecordAnswer = (props) => {
 
     const startRecording = () => {
         const timer = setTimeout(() => {
-            console.log("start recording");
             handleStartCaptureClick();
         }, 2000);
         return () => clearTimeout(timer);
@@ -59,23 +58,23 @@ const RecordAnswer = (props) => {
         const timer = setTimeout(() => {
             handleStopCaptureClick();
         }, 31000);
-        return () => clearTimeout(timer);
+        var a = clearTimeout(timer);
     }, [webcamRef, setCapturing, mediaRecorderRef]);
 
     const handleDataAvailable = React.useCallback(
         ({ data }) => {
+            console.log("data ==>", data + "data size ==>", data.size);
             if (data.size > 0) {
                 setRecordedChunks((prev) => prev.concat(data));
+                console.log("setrecordedchuncks");
             }
         },
         [setRecordedChunks]
     );
 
     const handleStopCaptureClick = React.useCallback(() => {
-      console.log("stop recording first");
         mediaRecorderRef.current.stop();
         setCapturing(false);
-        console.log("stop recording second");
         // handleDownload();
         console.log("recordedChunks", recordedChunks);
         if (recordedChunks.length) {
