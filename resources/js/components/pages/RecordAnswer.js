@@ -33,12 +33,20 @@ const RecordAnswer = (props) => {
         if (user) {
             setUserProfile(user);
         }
-        handleStartCaptureClick();
+        startRecording();
         return () => clearTimeout(timer);
     }, [props]);
 
+    const startRecording = () => {
+        const timer = setTimeout(() => {
+            console.log("start recording");
+            handleStartCaptureClick();
+        }, 2000);
+        return () => clearTimeout(timer);
+    };
+
     const handleStartCaptureClick = React.useCallback(() => {
-        console.log("start recording");
+        console.log("video record start");
         setCapturing(true);
         mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
             mimeType: "video/webm",
@@ -48,10 +56,10 @@ const RecordAnswer = (props) => {
             handleDataAvailable
         );
         mediaRecorderRef.current.start();
-        const timer = setTimeout(() => {
-          handleStopCaptureClick();
-        }, 31000);
-        return () => clearTimeout(timer);
+        // const timer = setTimeout(() => {
+        //     handleStopCaptureClick();
+        // }, 31000);
+        // return () => clearTimeout(timer);
     }, [webcamRef, setCapturing, mediaRecorderRef]);
 
     const handleDataAvailable = React.useCallback(
@@ -74,7 +82,7 @@ const RecordAnswer = (props) => {
             const blob = new Blob(recordedChunks, {
                 type: "video/webm",
             });
-            console.log("blob url" , blob);
+            console.log("blob url", blob);
             // const url = URL.createObjectURL(blob);
             // const a = document.createElement("a");
             // document.body.appendChild(a);
