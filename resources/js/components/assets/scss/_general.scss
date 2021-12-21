@@ -1,0 +1,112 @@
+/*
+    Used variable => $themeColor, 
+*/
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*::selection {
+  background-color: #5468ff;
+  color: #ffffff;
+}
+html,
+body {
+  scroll-behavior: smooth;
+}
+body {
+  width: 100%;
+  overflow-x: hidden;
+  // @include themeFont();
+
+  &.no-scroll {
+    overflow: hidden;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 9;
+    }
+  }
+  &.no-scroll2 {
+    overflow: hidden;
+    position: relative;
+  }
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+p,
+span,
+a {
+  margin: 0;
+  padding: 0;
+}
+a,
+button,
+input,
+textarea,
+select {
+  outline: 0;
+  text-decoration: none;
+  box-shadow: none;
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    text-decoration: none;
+    box-shadow: none;
+  }
+}
+a,
+button,
+select,
+input[type="submit"],
+input[type="button"] {
+  cursor: pointer;
+}
+img,
+svg,
+video {
+  max-width: 100%;
+}
+ul,
+li {
+  list-style: none;
+}
+
+/* CUSTOM-BOOSTRAP */
+.container {
+  max-width: 1390px;
+}
+.container,
+.container-fluid {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.row {
+  margin-left: -6px;
+  margin-right: -6px;
+}
+.col {
+  padding-left: 6px;
+  padding-right: 6px;
+}

@@ -1,0 +1,70 @@
+.preloader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+
+    background-color: rgba($color: #F8FAFF, $alpha: 0.8);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 999;
+
+    .preloader-inner{
+        display: inline-block;
+    }
+}
+
+#preLoader-typed{
+    font-size: 6em;
+    font-weight: bold;
+
+    .color-black{
+        color: #000000;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .color-blue{
+        color: #5468FF;
+    }
+
+    .dots{
+        color: #5468FF;
+        font-family: 'Roboto', sans-serif;
+
+        animation-name: preloader-dot;
+        animation-fill-mode: both;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+
+        &.dot1{
+            animation-delay: 0.1s;
+        }
+        &.dot2{
+            animation-delay: 0.3s;
+        }
+        &.dot3{
+            animation-delay: 0.5s;
+        }
+    }
+}
+
+@keyframes preloader-dot {
+    0%, 100%{
+        opacity: 0.2;
+    }
+    50%{
+        opacity: 1;
+    }
+}
+

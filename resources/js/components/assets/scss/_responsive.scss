@@ -1,0 +1,311 @@
+@media screen and (max-width: 1366px) {
+    #main{
+        &.full-screen{
+            padding: 15px 30px;
+        }
+    }
+    .static-tellme-inner{
+        padding: 30px 18px;
+    }
+    #header{
+        .header-menu-nav{
+            > ul{
+                > li{
+                    margin-right: 24px;
+
+                    &.bttn{
+                        a{
+                            span{
+                                padding: 10px 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .tellme-content{
+        max-width: 380px;
+        padding: 175px 0;
+
+        .tellme-content-before-after{
+            img{
+                width: 80px;
+
+                &.before{
+                    right: -50px;
+                }
+
+                &.after{
+                    bottom: 100px;
+                }
+            }
+        }
+
+        .text{
+            height: 200px;
+
+            h2{
+                font-size: 42px;
+            }
+        }
+
+        .bttn{
+            a{
+                font-size: 16px;
+                padding: 14px 24px;
+            }
+        }
+    }
+    .tellme-download{
+        max-width: 380px;
+        bottom: 20px;
+
+        a{
+            width: 36%;
+        }
+    }
+    .dynamic-mobile-inner{
+        .bottom-tabs{
+            ul{
+                li{
+                    // padding: 0 15px;
+                }
+            }
+        }
+
+        .center-box{
+            max-width: 380px;
+            border-radius: 18px;
+
+            &.theme-bg{
+                min-height: 500px;
+            }
+
+            &.solid-white-bg{
+                max-width: 280px;
+                padding: 15px;
+            }
+
+            &.view-answer-center-bx{
+                max-width: 335px;
+            }
+            &.asker-option-page{
+                max-width: 320px;
+                padding: 0;
+                border-radius: 30px;
+            }
+            &.search-asker-code{
+                min-height: 320px;
+            }
+        }
+    }
+    
+    .home-tilt-wrapper{
+        .listing-img{
+            width: 22em;
+        }
+        .boxing-img{
+            width: 15em;
+        }
+    }
+
+    /* LOGIN/REGISTER : START */
+    .log-reg-form{
+        max-width: 280px;
+
+        .text-filled{
+            &.with-icon{
+                border-radius: 12px;
+
+                .icon{
+                    width: 50px;
+
+                    .material-icons{
+                        font-size: 20px;
+                    }
+
+                    &.flag{
+                        .img, img{
+                            width: 25px;
+                            height: 25px;
+                        }
+                        span{
+                            top: 46%;
+                            left: 22%;
+                            width: 100%;
+                        }
+                    }
+                }
+                input, textarea, select{
+                    width: calc(100% - 50px);
+                }
+                .pass-show-hide{
+                    a{
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            &.password-filled{
+                input{
+                    width: calc(100% - 110px);
+                }
+            }
+
+            input, textarea, select{
+                font-size: 16px;
+                height: 55px;
+            }
+
+            &.otp-filled{
+                input{
+                    letter-spacing: 58px;
+                }
+            }
+        }
+
+        .forgot-pass-para, .cont{
+            p, a{
+                font-size: 14px;
+            }
+        }
+        .select-filled{
+            .bootstrap-select{
+                .filter-option-inner-inner{
+                    font-size: 16px;
+                    height: 55px;
+                }
+                > .dropdown-menu{
+                    width: 250px;
+                    height: 240px;
+                }
+                .bs-searchbox{
+                    input{
+                        font-size: 14px;
+                    }
+                }
+                .dropdown-item{
+                    font-size: 14px;
+                }
+            }
+        }
+        .mobile-filled.with-icon{
+            > input{
+                width: calc(100% - 110px);
+            }
+        }
+        .submit-filled{
+            input{
+                height: 55px;
+                border-radius: 12px;
+            }
+        }
+    }
+    
+    /* LOGIN/REGISTER : END */
+
+    .create-asker{
+        .create-asker-form-flex{
+            .icon{
+                width: 70px;
+                height: 70px;
+            }
+            .cont{
+                width: calc(100% - 80px);
+                text-align: left;
+            }
+            .what-about{
+                font-size: 20px;
+                min-height: 50px;
+            }
+        }
+    }
+
+    .modile-screen-border{
+        padding: 7px;
+        height: 500px;
+        max-width: 280px;
+        border-radius: 18px;
+
+        .screen{
+            border-radius: 18px;
+        }
+        .head{
+            img{
+                width: 80px;
+            }
+        }
+        .cont{
+            bottom: 130px;
+        }
+    }
+    .wth-ans-inner-slider{
+        .slick-dots{
+            li{
+                button{
+                    height: 5px;
+                }
+            }
+        }
+    }
+
+    .status-info-modal{
+        &.account-setting-modal{
+            .close, .close-bttn{
+                top: -19px;
+
+                span, a{
+                    font-size: 18px;
+                }
+            }
+        }
+        .head{
+            h4{
+                font-size: 16px;
+            }
+        }
+        .list{
+            ul{
+                li{
+                    .icon{
+                        width: 28px;
+                        height: 28px;
+
+                        span{
+                            font-size: 16px;
+                        }
+                    }
+                    .text{
+                        padding-left: 8px;
+
+                        h4{
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .add-ques-list{
+        > ul{
+            &:after{
+                width: 2px;
+            }
+
+            > li{
+                padding: 18px 15px 18px 40px;
+                
+                textarea{
+                    font-size: 13px;
+                }
+                a{
+                    > .text{
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+}
