@@ -20,7 +20,9 @@ const RecordAnswer = (props) => {
     const [BlobUrl, setBlobUrl] = useState("");
     const [AskerData, setAskerData] = useState([]);
     const [DisableButton, setDisableButton] = useState(true);
-
+    const videoConstraints = {
+        facingMode: "user",
+    };
     useEffect(() => {
         if ($(".flip-card-inner").hasClass("start-rotate")) {
             $(".flip-card-inner").removeClass("start-rotate");
@@ -44,7 +46,7 @@ const RecordAnswer = (props) => {
         return () => clearTimeout(timer);
     };
 
-    const handleStartCaptureClick = React.useCallback(() => {
+    const handleStartCaptureClick = () => {
         console.log("video record start");
         setCapturing(true);
         mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
@@ -59,7 +61,8 @@ const RecordAnswer = (props) => {
             handleStopCaptureClick();
         }, 31000);
         var a = clearTimeout(timer);
-    }, [webcamRef, setCapturing, mediaRecorderRef]);
+        return () => webcamRef, setCapturing, mediaRecorderRef, a;
+    };
 
     const handleDataAvailable = React.useCallback(
         ({ data }) => {
@@ -126,6 +129,7 @@ const RecordAnswer = (props) => {
                                 audio={true}
                                 ref={webcamRef}
                                 className="display-video"
+                                videoConstraints={videoConstraints}
                             />
                             {/* {capturing ? (
                                 <button onClick={handleStopCaptureClick}>
