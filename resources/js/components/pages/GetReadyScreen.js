@@ -9,42 +9,6 @@ import { useReactMediaRecorder } from "react-media-recorder";
 import Webcam from "react-webcam";
 
 import logo from "../assets/images/logo.svg";
-// function LiveStreamPreview({ stream }) {
-//     let videoPreviewRef = React.useRef();
-
-//     React.useEffect(() => {
-//         if (videoPreviewRef.current && stream) {
-//             videoPreviewRef.current.srcObject = stream;
-//         }
-//     }, [stream]);
-
-//     if (!stream) {
-//         return null;
-//     }
-
-//     return <video ref={videoPreviewRef} autoPlay className="video-preview" />;
-// }
-
-// const RecordView = () => {
-//     const {
-//         status,
-//         startRecording,
-//         stopRecording,
-//         previewStream,
-//         mediaBlobUrl,
-//     } = useReactMediaRecorder({ video: true });
-//     return (
-//         <>
-//             <LiveStreamPreview stream={previewStream} />
-//             {/* <div>
-//       <p>{status}</p>
-//       <button onClick={startRecording}>Start Recording</button>
-//       <button onClick={stopRecording}>Stop Recording</button>
-//       <video src={mediaBlobUrl} controls autoplay loop />
-//        </div> */}
-//         </>
-//     );
-// };
 
 const GetReadyScreen = (props) => {
     const webcamRef = React.useRef(null);
@@ -188,8 +152,8 @@ const GetReadyScreen = (props) => {
                         </Link>
                     </div>
                     <div class="wth-ans-inner-slider  remove-flip">
-                        <Webcam audio={true} ref={webcamRef} />
-                        {capturing ? (
+                        <Webcam audio={true} ref={webcamRef}  className="display-video"/>
+                        {/* {capturing ? (
                             <button onClick={handleStopCaptureClick}>
                                 Stop Capture
                             </button>
@@ -200,9 +164,7 @@ const GetReadyScreen = (props) => {
                         )}
                         {recordedChunks.length > 0 && (
                             <button onClick={handleDownload}>Download</button>
-                        )}
-                        {/* render video */}
-                        {/* <RecordView /> */}
+                        )} */}
 
                         {Loader ? (
                             <div class="ready-loader-wrapper">
