@@ -56,10 +56,10 @@ const RecordAnswer = (props) => {
             handleDataAvailable
         );
         mediaRecorderRef.current.start();
-        // const timer = setTimeout(() => {
-        //     handleStopCaptureClick();
-        // }, 31000);
-        // return () => clearTimeout(timer);
+        const timer = setTimeout(() => {
+            handleStopCaptureClick();
+        }, 31000);
+        return () => clearTimeout(timer);
     }, [webcamRef, setCapturing, mediaRecorderRef]);
 
     const handleDataAvailable = React.useCallback(
@@ -72,6 +72,7 @@ const RecordAnswer = (props) => {
     );
 
     const handleStopCaptureClick = React.useCallback(() => {
+        console.log("stop recording");
         mediaRecorderRef.current.stop();
         setCapturing(false);
         handleDownload();
