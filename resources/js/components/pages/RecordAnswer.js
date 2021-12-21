@@ -35,7 +35,7 @@ const RecordAnswer = (props) => {
         if (user) {
             setUserProfile(user);
         }
-        startRecording();
+        // startRecording();
         return () => clearTimeout(timer);
     }, [props]);
 
@@ -46,7 +46,7 @@ const RecordAnswer = (props) => {
         return () => clearTimeout(timer);
     };
 
-    const handleStartCaptureClick = () => {
+    const handleStartCaptureClick = React.useCallback(() => {
         console.log("video record start");
         setCapturing(true);
         mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
@@ -58,11 +58,11 @@ const RecordAnswer = (props) => {
         );
         mediaRecorderRef.current.start();
         const timer = setTimeout(() => {
-            handleStopCaptureClick();
+            // handleStopCaptureClick();
+            console.log("stop recoring ");
         }, 31000);
-        var a = clearTimeout(timer);
-        return () => webcamRef, setCapturing, mediaRecorderRef, a;
-    };
+        return () => clearTimeout(timer);
+    }, [webcamRef, setCapturing, mediaRecorderRef]);
 
     const handleDataAvailable = React.useCallback(
         ({ data }) => {
@@ -78,7 +78,6 @@ const RecordAnswer = (props) => {
     const handleStopCaptureClick = React.useCallback(() => {
         mediaRecorderRef.current.stop();
         setCapturing(false);
-        // handleDownload();
         console.log("recordedChunks", recordedChunks);
         if (recordedChunks.length) {
             const blob = new Blob(recordedChunks, {
@@ -131,7 +130,7 @@ const RecordAnswer = (props) => {
                                 className="display-video"
                                 videoConstraints={videoConstraints}
                             />
-                            {/* {capturing ? (
+                            {capturing ? (
                                 <button onClick={handleStopCaptureClick}>
                                     Stop Capture
                                 </button>
@@ -144,7 +143,7 @@ const RecordAnswer = (props) => {
                                 <button onClick={handleDownload}>
                                     Download
                                 </button>
-                            )} */}
+                            )}
                             <div class="cont">
                                 <p>{props.data.data.title}</p>
                                 <div class="start-video-progress">
