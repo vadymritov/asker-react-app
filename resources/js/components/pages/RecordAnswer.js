@@ -35,7 +35,7 @@ const RecordAnswer = (props) => {
         if (user) {
             setUserProfile(user);
         }
-        // startRecording();
+        startRecording();
         return () => clearTimeout(timer);
     }, [props]);
 
@@ -58,8 +58,8 @@ const RecordAnswer = (props) => {
         );
         mediaRecorderRef.current.start();
         const timer = setTimeout(() => {
-            // handleStopCaptureClick();
-            console.log("stop recoring ");
+            handleStopCaptureClick();
+            console.log("stop recording after 30 seconds");
         }, 31000);
         return () => clearTimeout(timer);
     }, [webcamRef, setCapturing, mediaRecorderRef]);
@@ -130,7 +130,7 @@ const RecordAnswer = (props) => {
                                 className="display-video"
                                 videoConstraints={videoConstraints}
                             />
-                            {capturing ? (
+                            {/* {capturing ? (
                                 <button onClick={handleStopCaptureClick}>
                                     Stop Capture
                                 </button>
@@ -143,7 +143,7 @@ const RecordAnswer = (props) => {
                                 <button onClick={handleDownload}>
                                     Download
                                 </button>
-                            )}
+                            )} */}
                             <div class="cont">
                                 <p>{props.data.data.title}</p>
                                 <div class="start-video-progress">
