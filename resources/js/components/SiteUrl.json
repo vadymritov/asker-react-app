@@ -1,4 +1,4 @@
 {
-    "FULLBASEROOT": "http://192.168.0.13:8000/",
-    "FULLBASE_API": "http://192.168.0.13:8000/api/"
+    "FULLBASEROOT": "https://www.askerapp.com/",
+    "FULLBASE_API": "https://www.askerapp.com/api/"
 }
