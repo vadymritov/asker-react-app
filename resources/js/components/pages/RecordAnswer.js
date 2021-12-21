@@ -66,7 +66,8 @@ const RecordAnswer = (props) => {
 
     const handleDataAvailable = React.useCallback(
         ({ data }) => {
-            console.log("data ==>", data + "data size ==>", data.size);
+            console.log("data ==>", data );
+            console.log( "data size ==>", data.size);
             if (data.size > 0) {
                 setRecordedChunks((prev) => prev.concat(data));
                 console.log("setrecordedchuncks");
