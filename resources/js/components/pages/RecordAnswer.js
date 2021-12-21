@@ -66,11 +66,23 @@ const RecordAnswer = (props) => {
 
     const handleDataAvailable = React.useCallback(
         ({ data }) => {
-            console.log("data ==>", data );
-            console.log( "data size ==>", data.size);
+            console.log("data ==>", data);
+            console.log("data size ==>", data.size);
             if (data.size > 0) {
-                setRecordedChunks((prev) => prev.concat(data));
-                console.log("setrecordedchuncks");
+                setRecordedChunks((prev) => {
+                    console.log(prev);
+                    prev.concat(data);
+                    const myFile = new File([prev], "example.mp4", {
+                        type: "video/mp4",
+                    });
+                    console.log("myFile",myFile);
+                });
+                
+                const myFile = new File([data], "example.mp4", {
+                    type: "video/mp4",
+                });
+                console.log("other myFile",myFile);
+                
             }
         },
         [setRecordedChunks]
