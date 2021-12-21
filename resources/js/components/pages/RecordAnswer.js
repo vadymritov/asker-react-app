@@ -72,10 +72,18 @@ const RecordAnswer = (props) => {
     );
 
     const handleStopCaptureClick = React.useCallback(() => {
-        console.log("stop recording");
+      console.log("stop recording first");
         mediaRecorderRef.current.stop();
         setCapturing(false);
-        handleDownload();
+        console.log("stop recording second");
+        // handleDownload();
+        console.log("recordedChunks", recordedChunks);
+        if (recordedChunks.length) {
+            const blob = new Blob(recordedChunks, {
+                type: "video/webm",
+            });
+            console.log("blob url", blob);
+        }
     }, [mediaRecorderRef, webcamRef, setCapturing]);
 
     const handleDownload = React.useCallback(() => {
