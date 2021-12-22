@@ -55,6 +55,7 @@ Auth::routes(['register'=>false]);
 
 // Backend section start
 Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function(){
+    Route::get('/','PromotionalVideoController@index');
 
     Route::get('/home','AdminController@index')->name('admin');
     Route::resource('users','UsersController');
