@@ -52,7 +52,9 @@ Route::group(['prefix'=>'/api','middleware'=>['api']],function(){
 
 });
 Auth::routes(['register'=>false]);
-
+Route::get('/login', function () {
+    return view('auth.login');
+});
 // Backend section start
 Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function(){
     Route::get('/','PromotionalVideoController@index');
