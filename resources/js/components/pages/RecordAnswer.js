@@ -65,24 +65,39 @@ const RecordAnswer = (props) => {
     }, [webcamRef, setCapturing, mediaRecorderRef]);
 
     const handleDataAvailable = React.useCallback(
-        ({ data }) => {
+        async ({ data }) => {
             console.log("data ==>", data);
             console.log("data size ==>", data.size);
             if (data.size > 0) {
-                setRecordedChunks((prev) => {
-                    console.log(prev);
-                    prev.concat(data);
-                    const myFile = new File([prev], "example.mp4", {
-                        type: "video/mp4",
-                    });
-                    console.log("myFile",myFile);
-                });
-                
+                setRecordedChunks((prev) => prev.concat(data));
+
                 const myFile = new File([data], "example.mp4", {
                     type: "video/mp4",
                 });
-                console.log("other myFile",myFile);
-                
+                console.log("other myFile", myFile);
+                var asker_id = props.data.AnswerData.asker_id;
+                var question_id = props.data.data.question_id;
+                var user_id = UserProfile.id;
+                var fdata = new FormData();
+                // fdata.append("file", blob);
+                fdata.append("answer", audiofile);
+                fdata.append("asker_id", asker_id);
+                fdata.append("question_id", question_id);
+                fdata.append("user_id", user_id);
+
+                await $.ajax({
+                    type: "POST",
+                    //enctype: 'multipart/form-data',
+                    url: SITEURL.FULLBASE_API + "submitAnswer",
+                    data: fdata,
+                    //dataType:'text',
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    success: function (fdata) {
+                        setDisableButton(false);
+                    },
+                });
             }
         },
         [setRecordedChunks]
@@ -96,7 +111,6 @@ const RecordAnswer = (props) => {
             const blob = new Blob(recordedChunks, {
                 type: "video/webm",
             });
-            console.log("blob url", blob);
         }
     }, [mediaRecorderRef, webcamRef, setCapturing]);
 
