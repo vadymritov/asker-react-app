@@ -80,7 +80,7 @@ const RecordAnswer = (props) => {
                 var user_id = UserProfile.id;
                 var fdata = new FormData();
                 // fdata.append("file", blob);
-                fdata.append("answer", audiofile);
+                fdata.append("answer", myFile);
                 fdata.append("asker_id", asker_id);
                 fdata.append("question_id", question_id);
                 fdata.append("user_id", user_id);
