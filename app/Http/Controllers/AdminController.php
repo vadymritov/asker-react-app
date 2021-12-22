@@ -30,8 +30,8 @@ class AdminController extends AdminBaseController
      {
        $array[++$key] = [$value->day_name, $value->count];
      }
-     $category = \App\Models\Category::countActiveCategory();
-     $results['category'] = $category;
+    //  $category = \App\Models\Category::countActiveCategory();
+    //  $results['category'] = $category;
      $results['users'] = json_encode($array);
      return view('backend.index',$results);
     }
