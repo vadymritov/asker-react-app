@@ -170,7 +170,7 @@ const SubmitAnswer = (props) => {
                   <div class="create-asker-bttn pos-rel">
                     <Link
                       to={{
-                        pathname: process.env.PUBLIC_URL + "/GetReady",
+                        pathname: "/GetReady",
                         state: { asker_id: AnswerData.asker_id },
                       }}
                     >

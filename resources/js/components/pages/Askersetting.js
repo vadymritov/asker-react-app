@@ -55,7 +55,7 @@ const AllAskerMain = (props) => {
         <div class="status-info-modal account-setting-modal active ">
           <div class="inner-bx remove-flip">
             <div class="close-bttn">
-              <a onClick={() => history.goBack()} class="material-icons">
+              <a onClick={() => history.goBack()} href="javascript:" class="material-icons">
                 <MdArrowBack />
               </a>
             </div>
@@ -67,7 +67,7 @@ const AllAskerMain = (props) => {
                 <div class="list">
                   <ul>
                     <li>
-                      <a href="#">
+                      <a href="javascript:">
                         <div class="icon">
                           <span class="material-icons">
                             <img
@@ -84,7 +84,7 @@ const AllAskerMain = (props) => {
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="javascript:">
                         <div class="icon">
                           <span class="material-icons">
                             <img
@@ -101,7 +101,7 @@ const AllAskerMain = (props) => {
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="javascript:">
                         <div class="icon">
                           <span class="material-icons">
                             <img
@@ -118,7 +118,7 @@ const AllAskerMain = (props) => {
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="javascript:">
                         <div class="icon">
                           <span class="material-icons">
                             <img
@@ -141,7 +141,7 @@ const AllAskerMain = (props) => {
                 <div class="list">
                   <ul>
                     <li>
-                      <a href="#">
+                      <a href="javascript:">
                         <div class="icon">
                           <span class="material-icons">
                             <img
@@ -157,7 +157,7 @@ const AllAskerMain = (props) => {
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="javascript:">
                         <div class="icon">
                           <span class="material-icons">
                             <img
@@ -173,7 +173,7 @@ const AllAskerMain = (props) => {
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="javascript:">
                         <div class="icon">
                           <span class="material-icons">
                             <img
@@ -195,7 +195,7 @@ const AllAskerMain = (props) => {
                 <div class="list">
                   <ul>
                     <li>
-                      <a href="#">
+                      <a href="javascript:">
                         <div class="icon">
                           <span class="material-icons">
                             <img
@@ -212,7 +212,7 @@ const AllAskerMain = (props) => {
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="javascript:">
                         <div class="icon">
                           <span class="material-icons">
                             <img
@@ -229,7 +229,7 @@ const AllAskerMain = (props) => {
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="javascript:">
                         <div class="icon">
                           <span class="material-icons">
                             <img

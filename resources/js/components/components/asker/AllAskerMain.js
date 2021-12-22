@@ -10,7 +10,7 @@ import ActiveAsker from "./ActiveAsker";
 import AchivedAsker from "./AchivedAsker";
 import SITEURL from "../../SiteUrl.json";
 
-import logo from "../../assets/images/logo3.png";
+import logo from "../../assets/images/logo.svg";
 const AllAskerMain = (props) => {
   const [UserProfile, setUserProfile] = useState([]);
   const [ShareAskerData, setShareAskerData] = useState([]);

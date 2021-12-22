@@ -12,7 +12,6 @@ function Home(props) {
 
     useEffect(() => {
         var user = localStorage.getItem("User");
-        console.log(user);
         if (user === "Logout" || user === null) {
             setLoginStatus(false);
         } else {

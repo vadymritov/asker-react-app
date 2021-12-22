@@ -78,6 +78,7 @@ const DisplayQuestion = (props) => {
       .then((resp) => resp.json())
       .then((respJson) => {
         if (respJson.status === true) {
+          console.log(respJson);
           setViewAsker(respJson.data);
         }
       })

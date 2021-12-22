@@ -47,7 +47,6 @@ const RecordAnswer = (props) => {
     };
 
     const handleStartCaptureClick = React.useCallback(() => {
-        console.log("video record start");
         setCapturing(true);
         mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
             mimeType: "video/webm",
@@ -59,22 +58,18 @@ const RecordAnswer = (props) => {
         mediaRecorderRef.current.start();
         const timer = setTimeout(() => {
             handleStopCaptureClick();
-            console.log("stop recording after 30 seconds");
         }, 31000);
         return () => clearTimeout(timer);
     }, [webcamRef, setCapturing, mediaRecorderRef]);
 
     const handleDataAvailable = React.useCallback(
         async ({ data }) => {
-            console.log("data ==>", data);
-            console.log("data size ==>", data.size);
             if (data.size > 0) {
                 setRecordedChunks((prev) => prev.concat(data));
 
                 const myFile = new File([data], "example.mp4", {
                     type: "video/mp4",
                 });
-                console.log("other myFile", myFile);
                 var asker_id = props.data.AnswerData.asker_id;
                 var question_id = props.data.data.question_id;
                 var user_id = UserProfile.id;
@@ -85,6 +80,7 @@ const RecordAnswer = (props) => {
                 fdata.append("question_id", question_id);
                 fdata.append("user_id", user_id);
 
+                console.log("fdata" , fdata);
                 await $.ajax({
                     type: "POST",
                     //enctype: 'multipart/form-data',
@@ -106,7 +102,6 @@ const RecordAnswer = (props) => {
     const handleStopCaptureClick = React.useCallback(() => {
         mediaRecorderRef.current.stop();
         setCapturing(false);
-        console.log("recordedChunks", recordedChunks);
         if (recordedChunks.length) {
             const blob = new Blob(recordedChunks, {
                 type: "video/webm",
@@ -119,7 +114,6 @@ const RecordAnswer = (props) => {
             const blob = new Blob(recordedChunks, {
                 type: "video/webm",
             });
-            console.log("blob url", blob);
             // const url = URL.createObjectURL(blob);
             // const a = document.createElement("a");
             // document.body.appendChild(a);
