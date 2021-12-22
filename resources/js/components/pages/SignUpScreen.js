@@ -160,7 +160,7 @@ const SignUpScreen = (props) => {
                         </div>
                         <div class="cont">
                             <p>Already have an account?</p>
-                            <Link to={"/LogIn"}>
+                            <Link to={"/SignIn"}>
                                 SIGN IN
                             </Link>
                         </div>

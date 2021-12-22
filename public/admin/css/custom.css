@@ -1,0 +1,206 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.ca-pos-rel {
+  position: relative;
+}
+
+.ca-sidebar {
+  background-color: #F8FAFF;
+}
+
+.ca-sidebar .ca-nav-item .ca-nav-link {
+  display: block;
+  line-height: 1;
+  color: #4B494B;
+  font-size: 14px;
+  font-family: "Work Sans", sans-serif;
+  font-weight: normal;
+  text-transform: capitalize;
+}
+.ca-sidebar .ca-nav-item .ca-nav-link span {
+  font-size: 14px;
+}
+.ca-sidebar .ca-nav-item .ca-nav-link > i, .ca-sidebar .ca-nav-item .ca-nav-link > img {
+  color: #197cd5;
+  min-width: 25px;
+  padding: 0;
+  margin: 0;
+}
+.ca-sidebar .ca-nav-item .ca-nav-link > img {
+  object-fit: contain;
+  object-position: left;
+}
+.ca-sidebar .ca-nav-item .ca-nav-link:hover, .ca-sidebar .ca-nav-item .ca-nav-link:focus {
+  color: #197cd5;
+}
+.ca-sidebar .ca-nav-item .ca-nav-link:hover > i, .ca-sidebar .ca-nav-item .ca-nav-link:focus > i {
+  color: #197cd5;
+}
+
+.ca-navbar {
+  background-color: #f8faff;
+}
+
+.ca-content#content {
+  background-color: #FFFFFF;
+}
+
+.ca-card {
+  box-shadow: none;
+  border: none;
+  border-radius: 8px;
+  padding: 20px 20px;
+}
+
+.ca-card-header {
+  background: #f8faff;
+  color: #4e73df;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ca-card-body {
+  padding: 20px 25px;
+  background-color: #f8faff40;
+}
+
+.ca-table-responsive {
+  overflow-x: visible;
+}
+
+.ca-table {
+  border: none;
+  border-collapse: separate;
+  border-spacing: 0 1em !important;
+}
+.ca-table thead, .ca-table tbody, .ca-table tfoot, .ca-table tr, .ca-table th, .ca-table td {
+  color: #000;
+  border: none;
+  vertical-align: middle;
+}
+.ca-table tfoot {
+  display: none;
+}
+.ca-table tbody tr {
+  background-color: #FFFFFF;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.ca-table tbody tr th:first-child, .ca-table tbody tr td:first-child {
+  border-radius: 8px 0 0 8px;
+}
+.ca-table tbody tr th:last-child, .ca-table tbody tr td:last-child {
+  border-radius: 0px 8px 8px 0px;
+}
+
+.ca-form .ca-form-group {
+  width: 100%;
+}
+.ca-form .ca-form-group label {
+  display: block;
+  width: 100%;
+}
+.ca-form .ca-form-group input, .ca-form .ca-form-group textarea, .ca-form .ca-form-group select {
+  border-radius: 0;
+  box-shadow: none;
+  outline: 0;
+  border-width: 2px;
+  width: 100%;
+  height: 42px;
+  color: #000;
+}
+.ca-form .ca-form-group input:focus, .ca-form .ca-form-group textarea:focus, .ca-form .ca-form-group select:focus {
+  border-color: #4e73df;
+}
+.ca-form .ca-textarea textarea {
+  resize: none;
+  height: 84px;
+}
+.ca-form .ca-filefilled {
+  position: relative;
+}
+.ca-form .ca-filefilled > .ca-pos-rel {
+  width: 100%;
+}
+.ca-form .ca-filefilled input {
+  position: relative;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+.ca-form .ca-filefilled input:hover ~ span.upload, .ca-form .ca-filefilled input:focus ~ span.upload {
+  background-color: #4e73df;
+  color: #FFFFFF;
+}
+.ca-form .ca-filefilled input, .ca-form .ca-filefilled span.upload {
+  width: 100%;
+  height: 50px;
+}
+.ca-form .ca-filefilled span.upload {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px dashed #4e73df;
+  color: #4e73df;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.ca-form .ca-filefilled .input-video {
+  margin-top: 10px;
+}
+.ca-form .ca-selectfilled > .ca-pos-rel:after {
+  content: "\f078";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translate(0, -50%);
+  color: #d1d3e2;
+  font-size: 16px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 800;
+  line-height: 1;
+}
+.ca-form .ca-selectfilled select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+.ca-form .ca-bttn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 30px;
+}
+.ca-form .ca-bttn button, .ca-form .ca-bttn input {
+  border-radius: 0;
+  width: 100%;
+  max-width: 150px;
+  margin-right: 15px;
+}
+.ca-form .ca-bttn button:last-child, .ca-form .ca-bttn input:last-child {
+  margin-right: 0;
+}
+
+.ca-scroll-top {
+  display: inline-flex;
+  text-decoration: none !important;
+  line-height: 1;
+}
+.ca-scroll-top .fas {
+  font-size: 23px;
+  margin: auto;
+  line-height: 1;
+  padding: 0;
+}
+
+/*# sourceMappingURL=custom.css.map */
