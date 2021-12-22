@@ -17,7 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('{path?}', 'welcome');
 
 Route::group(['prefix'=>'/api','middleware'=>['api']],function(){
     Route::post('ApiVerifyOtp', 'Api\FrontendController@apiVerifyOtp');
@@ -72,3 +71,5 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function(){
     Route::get('change-password', 'AdminController@changePassword')->name('change.password.form');
     Route::post('change-password-store', 'AdminController@changPasswordStore')->name('admin-change.password');
 });
+
+Route::view('{path?}', 'welcome');
