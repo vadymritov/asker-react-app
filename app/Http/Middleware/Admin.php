@@ -19,11 +19,11 @@ class Admin
         if($request->user()->role=='admin'){
             return $next($request);
         }
-        else{
-            request()->session()->flash('error','You do not have any permission to access this page');
-            print_r($request->user()->role);
-            return redirect('admin/video');
+        // else{
+        //     request()->session()->flash('error','You do not have any permission to access this page');
+        //     print_r($request->user()->role);
+        //     return redirect()->route(url('admin/video'));
 
-        }
+        // }
     }
 }

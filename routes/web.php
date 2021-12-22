@@ -56,7 +56,7 @@ Route::get('/login', function () {
     return view('auth.login');
 });
 // Backend section start
-Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function(){
+Route::group(['prefix'=>'admin','middleware'=>['auth']],function(){
     Route::get('/','PromotionalVideoController@index');
 
     Route::get('/home','AdminController@index')->name('admin');
