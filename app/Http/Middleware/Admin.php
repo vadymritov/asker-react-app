@@ -22,7 +22,7 @@ class Admin
         else{
             request()->session()->flash('error','You do not have any permission to access this page');
             print_r($request->user()->role);
-            return redirect()->route('admin/video');
+            return redirect()->route(url('admin/video'));
 
         }
     }
